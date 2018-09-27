@@ -2,7 +2,12 @@
 <html lang="en">
 
   <head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="Contact_form.js" type="text/javascript">
+    </script>
+    <script src="Timer.js" type="text/javascript">
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -13,23 +18,29 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
+<!--     Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
-
+<!--     Custom styles for this template -->
+    <link href="css/resume.css" rel="stylesheet">
+    <!-- Custom Icons for this template(courtesy of w3schools) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <script src="Contact_form.js">
+    </script>
   </head>
 
-  <body id="page-top">
-
+  <body id="page-top" onload="startTime()">
+    <div class='Clock'>
+    <b>Current Time</b>
+    <div id="time"></div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">ALI AKBAR</span>
+        <span class="d-block d-lg-none">ALI AKBER</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/aliakbar.png" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./img/aliakbar.png" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +75,7 @@
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
           <h1 class="mb-0">ALI 
-            <span class="text-primary">AKBAR</span>
+            <span class="text-primary">AKBER</span>
           </h1>
           <div class="subheading mb-5">
             <a href="mailto:name@email.com">l164081@lhr.nu.edu.pk</a>
@@ -72,17 +83,39 @@
           <p class="lead mb-5">I love coding, reading, debating, weightlifting, and food. I am currently doing my degree in Computer Sciences (BSCS) from NUCES-FAST, Lahore.</p>
           <div class="social-icons">
             <a href="#">
-              <i class="fab fa-linkedin-in"></i>
+              <i class="fa fa-github"></i>
             </a>
             <a href="#">
-              <i class="fab fa-github"></i>
+              <i class="fa fa-instagram" > </i>
             </a>
             <a href="#">
-              <i class="fab fa-twitter"></i>
+              <i class="fa fa-facebook-f"></i>
             </a>
-            <a href="#">
-              <i class="fab fa-facebook-f"></i>
-            </a>
+          </div>
+          <!-- Contact me form -->
+          <div>
+            <div id="mainform">
+            <h3>Contact Me</h3>
+            <form id="form">
+            <p id="returnmessage"></p>
+            <label>Name: *</label>
+            <input type="text" id="name" placeholder="Name"/>
+            <br>
+            <label>Country *</label>
+            <select name="countries" id="country">
+              <option value="">Select Country</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="USA"> America</option>
+              <option value="India"> India</option>
+              <option value="Canada">Canada</option>
+            </select><br>
+            <label>Message: </label>
+            <br>
+            <textarea id="message" placeholder="Message......."></textarea>
+            <br>
+            <input type="button" id="submit" value="Send Message"/>
+            </form>
+            </div>
           </div>
         </div>
       </section>
@@ -97,7 +130,6 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Sales Executive</h3>
               <div class="subheading mb-3">DGS(Digital Globe Services</div>
-              <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.</p>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary">March 2017 - Sept 2017</span>
@@ -106,12 +138,11 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Developer</h3>
+              <h3 class="mb-0">Web Developer(Front End)</h3>
               <div class="subheading mb-3">Fivver,Upwork</div>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">December 2011 - March 2013</span>
+              <span class="text-primary"> May 2018 - Present </span>
             </div>
           </div>
 
@@ -119,7 +150,6 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Sales Executive</h3>
               <div class="subheading mb-3">CYH Global</div>
-              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary">July 2018 - Present</span>
@@ -141,7 +171,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">FAST - National Unversity of Computer and Emerging Sciences</h3>
-              <div class="subheading mb-3">Bachelor of Computer Science</div>
+              <div class="subheading mb-3">Bachelor of Computer Sciences(BSCS)</div>
               <div>Computer Science - Web Development Track</div>
             </div>
             <div class="resume-date text-md-right">
@@ -151,11 +181,11 @@
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Government College Lahore</h3>
-              <div class="subheading mb-3"> Intermediate Pre-Medical</div>
+              <h3 class="mb-0">GBHS&IC, Lahore</h3>
+              <div class="subheading mb-3"> F.Sc (Pre-Engineering)</div>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2013 - May 2015</span>
+              <span class="text-primary">August 2014 - May 2016</span>
             </div>
           </div>
 
@@ -171,41 +201,24 @@
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline dev-icons">
             <li class="list-inline-item">
-              <i class="fab fa-html5"></i>
+              <i class="devicon-html5-plain-wordmark colored"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-css3-alt"></i>
+              <i class="devicon-css3-plain-wordmark colored"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-js-square"></i>
+              <i class="devicon-csharp-plain colored"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-angular"></i>
+              <i class="devicon-cplusplus-plain colored"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-react"></i>
+              <i class="devicon-javascript-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-node-js"></i>
+              <i class="devicon-bootstrap-plain-wordmark"></i>
             </li>
-            <li class="list-inline-item">
-              <i class="fab fa-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-gulp"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-grunt"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-npm"></i>
-            </li>
+              <i class="devicon-java-plain-wordmark colored"></i>
           </ul>
 
           <div class="subheading mb-3">Workflow</div>
@@ -231,8 +244,7 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+          <p>Apart from being a workaholic, I am an avid <b>reader</b>. In the winters, my dream all-nighter consists a hot foamy cappuccino, NFAK qawalis on repeat and a good book to get immersed into. I recently read "The Lost Symbol" by Dan Brown under said circumstances and it was a breathtaking experience.
         </div>
       </section>
 
@@ -245,13 +257,10 @@
             <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
               Vice President at VOICE - Public Speaking and Debating Society</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Runners-Up at Beaconhouse Garden Town U-17 Debating Championship</li>
-            <li>
+              <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
               
-              Participant in Mastero Coders Competition ACM’17</li>
+               Participant in Mastero Coders Competition ACM’17</li>
             <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
              
